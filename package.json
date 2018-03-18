@@ -45,7 +45,7 @@
     "prepublish:bin:build": "mkdir ./dist/bin && ./node_modules/.bin/babel bin/mocha-parallel-tests --out-file dist/bin/mocha-parallel-tests && chmod +x dist/bin/mocha-parallel-tests",
     "prepublish:libs:clean": "rm -fr ./dist/lib",
     "prepublish:libs:build": "./node_modules/.bin/babel lib/ --out-dir ./dist/lib",
-    "pretest": "npm run lint && npm run prepublishOnly",
+    "pretest": "npm run prepublishOnly",
     "test": "./test/index.sh"
   },
   "license": "MIT",
