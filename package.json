@@ -1,6 +1,6 @@
 {
   "name": "mocha-parallel-tests",
-  "version": "1.2.10",
+  "version": "2.0.0-alpha.1",
   "homepage": "https://github.com/yandex/mocha-parallel-tests",
   "description": "Run mocha tests in parallel",
   "main": "./dist/api.js",
@@ -32,18 +32,20 @@
   ],
   "scripts": {
     "clean": "rm -rf ./node_modules",
+    "install": "bin/install.hook.js",
     "lint": "./node_modules/.bin/eslint lib/ test/ bin/ *.js",
-    "prepublish": "npm run prepublish:entrypoint && npm run prepublish:libs:clean && npm run prepublish:libs:build && npm run prepublish:bin:clean && npm run prepublish:bin:build",
+    "prepublishOnly": "npm run prepublish:entrypoint && npm run prepublish:libs:clean && npm run prepublish:libs:build && npm run prepublish:bin:clean && npm run prepublish:bin:build",
     "prepublish:entrypoint": "./node_modules/.bin/babel *.js --out-dir dist/",
     "prepublish:bin:clean": "rm -fr ./dist/bin",
     "prepublish:bin:build": "mkdir ./dist/bin && ./node_modules/.bin/babel bin/mocha-parallel-tests --out-file dist/bin/mocha-parallel-tests && chmod +x dist/bin/mocha-parallel-tests",
     "prepublish:libs:clean": "rm -fr ./dist/lib",
     "prepublish:libs:build": "./node_modules/.bin/babel lib/ --out-dir ./dist/lib",
-    "test": "npm run lint && npm run prepublish && ./test/index.sh"
+    "pretest": "npm run lint && npm run prepublishOnly",
+    "test": "./test/index.sh"
   },
   "license": "MIT",
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
   "peerDependencies": {
     "mocha": "^3"
