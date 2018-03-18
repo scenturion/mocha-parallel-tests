@@ -3,7 +3,7 @@
 OUTPUT=$(dist/bin/mocha-parallel-tests 2>&1)
 MPT_STATUS_CODE=$?
 
-node_modules/.bin/mocha 1>/dev/null 2>&1
+node_modules/$1/bin/mocha 1>/dev/null 2>&1
 MOCHA_STATUS_CODE=$?
 
 if [ $MPT_STATUS_CODE -eq $MOCHA_STATUS_CODE ]; then

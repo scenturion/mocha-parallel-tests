@@ -37,8 +37,8 @@
   ],
   "scripts": {
     "clean": "rm -rf ./node_modules",
-    "install": "bin/install.hook.js",
     "lint": "./node_modules/.bin/eslint lib/ test/ bin/ *.js",
+    "postinstall": "DEBUG=mocha-parallel-tests:postinstall bin/install.hook.js",
     "prepublishOnly": "npm run prepublish:entrypoint && npm run prepublish:libs:clean && npm run prepublish:libs:build && npm run prepublish:bin:clean && npm run prepublish:bin:build",
     "prepublish:entrypoint": "./node_modules/.bin/babel *.js --out-dir dist/",
     "prepublish:bin:clean": "rm -fr ./dist/bin",
@@ -72,6 +72,7 @@
     "mocha-teamcity-reporter": "^2.2.2",
     "mochawesome": "^3.0.2",
     "node-gyp": "^3.6.0",
+    "npm-install-version": "^6.0.2",
     "selenium-webdriver": "^3.3.0"
   }
 }
