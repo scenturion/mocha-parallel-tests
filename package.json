@@ -1,6 +1,6 @@
 {
   "name": "mocha-parallel-tests",
-  "version": "2.0.0-alpha.1",
+  "version": "2.0.0-alpha.2",
   "homepage": "https://github.com/yandex/mocha-parallel-tests",
   "description": "Run mocha tests in parallel",
   "main": "./dist/api.js",
@@ -24,6 +24,11 @@
   "bugs": {
     "url": "https://github.com/yandex/mocha-parallel-tests/issues"
   },
+  "files": [
+    "bin",
+    "dist",
+    "lib"
+  ],
   "keywords": [
     "mocha-parallel-tests",
     "parallel tests",
