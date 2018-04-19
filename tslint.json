@@ -1,0 +1,3 @@
+{
+  "extends": "@atlassian/pf-tslint-shared/tslint"
+}

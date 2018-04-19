@@ -17,10 +17,10 @@ function main() {
 
   log('Detected npm install without arguments');
 
-  log('Download mocha v3, 4 and 5 latest bundles');
-  niv.install('mocha@5');
-  niv.install('mocha@4');
-  niv.install('mocha@3');
+  // log('Download mocha v3, 4 and 5 latest bundles');
+  // niv.install('mocha@5');
+  // niv.install('mocha@4');
+  // niv.install('mocha@3');
 
   log('Preparation is finished');
 }
