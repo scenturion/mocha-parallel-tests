@@ -29,6 +29,11 @@ describe('top level suite 1', function () {
 });
 
 describe('top level suite 2', function () {
+  beforeEach(() => {
+    console.log('beforeeach');
+  })
+
+  it('should finish immediately (inner 2)', function () {});
   it('should finish immediately (inner 2)', function () {});
 
   it('should reject 2', function (done) {
@@ -37,3 +42,11 @@ describe('top level suite 2', function () {
     }, 8000);
   });
 });
+
+beforeEach(() => {
+  console.log('global before each');
+})
+
+afterEach(() => {
+  console.log('global after each');
+})
