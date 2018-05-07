@@ -6,6 +6,9 @@
   "main": "./dist/api.js",
   "bin": "./dist/bin/mocha-parallel-tests",
   "author": "Maria Motkina <mmotkina@yandex-team.ru>",
+  "files": [
+    "./dist/bin/mocha-parallel-tests"
+  ],
   "contributors": [
     "Dmitrii Sorin <info@staypositive.ru>",
     "Gabriel Fürstenheim",
