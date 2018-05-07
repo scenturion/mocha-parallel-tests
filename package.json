@@ -5,12 +5,16 @@
   "description": "Run mocha tests in parallel",
   "main": "./dist/api.js",
   "author": "Maria Motkina <mmotkina@yandex-team.ru>",
+  "bin" : {
+    "mocha-parallel-test" : "./dist/bin/mocha-parallel-tests"
+  },
   "contributors": [
     "Dmitrii Sorin <info@staypositive.ru>",
     "Gabriel Fürstenheim",
     "Kirill Molchanov <kirill-m@yandex-team.ru>",
     "Nikolay Basov",
-    "Vadim Kolontsov <vadim@kolontsov.com>"
+    "Vadim Kolontsov <vadim@kolontsov.com>",
+    "Luis Bolaños <labs.sistemas@gmail.com>"
   ],
   "dependencies": {
     "debug": "3.1.0",
@@ -36,7 +40,7 @@
     "prepublish": "npm run prepublish:entrypoint && npm run prepublish:libs:clean && npm run prepublish:libs:build && npm run prepublish:bin:clean && npm run prepublish:bin:build",
     "prepublish:entrypoint": "./node_modules/.bin/babel *.js --out-dir dist/",
     "prepublish:bin:clean": "rm -fr ./dist/bin",
-    "prepublish:bin:build": "mkdir ./dist/bin && ./node_modules/.bin/babel bin/mocha-parallel-tests --out-file dist/bin/mocha-parallel-tests",
+    "prepublish:bin:build": "mkdir ./dist/bin && ./node_modules/.bin/babel bin/mocha-parallel-tests --out-file dist/bin/mocha-parallel-tests && chmod +x dist/bin/mocha-parallel-tests",
     "prepublish:libs:clean": "rm -fr ./dist/lib",
     "prepublish:libs:build": "./node_modules/.bin/babel lib/ --out-dir ./dist/lib",
     "test": "npm run lint && npm run prepublish && ./test/index.sh"
